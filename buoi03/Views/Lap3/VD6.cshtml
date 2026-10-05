@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VD6</title>
+    <script language="Javascript">
+        function ResultView() {
+            var check = document.getElementsByName("sothich");
+            var result = " ";
+            for (var i = 0; i < check.length; i++) {
+                if (check[i].checked == true)
+                    result = result + '[' + check[i].value + ']';
+            }
+            alert("So thich la: " + result)
+        }
+    </script>
+</head>
+<body>
+    <h2>Hay chon so thich cua ban</h2>
+    <input type="checkbox" name="sothich" id="dichoi" value="dichoi" />Di choi
+    <br />
+    <input type="checkbox" name="sothich" id="didulich" value="didulich" />Di du lich
+    <br />
+    <input type="checkbox" name="sothich" id="dian" value="dian" />Di an
+    <br />
+    <input type="checkbox" name="sothich" id="disieuthi" value="disieuthi" />Di sieu thi
+    <br />
+    <input type="checkbox" name="sothich" id="hoclaptrinh" value="hoclaptrinh" />Hoc lap trinh
+    <br />
+    <input type="checkbox" name="sothich" id="onhanghingoi" value="onhanghi" /> O nha nghi ngoi
+    <br />
+    <input type="submit" id="btn" value="Xem ket qua" onclick="ResultView();"/>
+</body>
+</html>

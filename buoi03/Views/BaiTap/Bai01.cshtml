@@ -1,0 +1,112 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phiếu tham gia CLB Tin học LUBU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+            h2 span {
+                color: #00aaff;
+            }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 600px;
+            text-align: left;
+        }
+
+        table, th, td {
+            border: 1px solid #777;
+            padding: 8px 12px;
+        }
+
+        input[type="text"], select {
+            width: 90%;
+            padding: 4px;
+        }
+
+        .error {
+            color: red;
+            font-style: italic;
+        }
+
+        .result-text {
+            color: red;
+            font-style: italic;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+    </style>
+
+    <script src="~/Scripts/BaiTap/Bai01.js"></script>
+</head>
+<body onload="thayDoiChuyenNganh()">
+
+    <h2>PHIẾU THAM GIA CLB TIN HỌC <span>LUBU</span></h2>
+
+    <table>
+        <tr>
+            <td width="25%">Mã sinh viên :</td>
+            <td width="40%"><input type="text" id="maSV" placeholder="Nhập Mã SV"></td>
+            <td width="35%" class="error" id="errMaSV"></td>
+        </tr>
+        <tr>
+            <td>Họ và tên :</td>
+            <td><input type="text" id="hoTen" placeholder="Nhập Họ và tên"></td>
+            <td class="error" id="errHoTen"></td>
+        </tr>
+        <tr>
+            <td>Tuổi :</td>
+            <td><input type="text" id="tuoi" placeholder="Nhập tuổi > 18"></td>
+            <td class="error" id="errTuoi"></td>
+        </tr>
+        <tr>
+            <td>Ngoại ngữ :</td>
+            <td>
+                <input type="checkbox" id="chkAnh"> Anh
+                <input type="checkbox" id="chkPhap"> Pháp
+                <input type="checkbox" id="chkNhat"> Nhật
+            </td>
+            <td class="result-text" id="resNgoaiNgu"></td>
+        </tr>
+        <tr>
+            <td>Chuyên ngành :</td>
+            <td>
+                <select id="chuyenNganh" onchange="thayDoiChuyenNganh()">
+                    <option value="Hệ thống">Hệ thống</option>
+                    <option value="Phần mềm">Phần mềm</option>
+                    <option value="Mạng máy tính">Mạng máy tính</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sở trường :</td>
+            <td id="soTruong" style="font-style: italic;">Phân tích & thiết kế</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="btn-container">
+                <button type="button" onclick="dangKy()">Đăng ký</button>
+            </td>
+            <td id="msgDangKy" style="font-weight: bold; font-style: italic;"></td>
+        </tr>
+    </table>
+
+</body>
+</html>

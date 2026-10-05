@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4 - To-Do List Application</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .todo-container {
+            width: 400px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .header-box {
+            display: flex;
+            background-color: #34495e;
+        }
+
+            .header-box input[type="text"] {
+                flex: 1;
+                padding: 15px 20px;
+                border: none;
+                background-color: transparent;
+                color: #fff;
+                font-size: 18px;
+                outline: none;
+            }
+
+                .header-box input[type="text"]::placeholder {
+                    color: #7f8c8d;
+                }
+
+            .header-box button {
+                width: 60px;
+                background-color: #1abc9c;
+                border: none;
+                color: white;
+                font-size: 28px;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+
+                .header-box button:hover {
+                    background-color: #16a085;
+                }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            ul li {
+                padding: 15px 20px;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 18px;
+                color: #2c3e50;
+            }
+
+                ul li:last-child {
+                    border-bottom: none;
+                }
+
+                ul li label {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    flex: 1;
+                }
+
+                ul li input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 12px;
+                    cursor: pointer;
+                    accent-color: #3498db;
+                }
+
+        .completed {
+            text-decoration: line-through;
+            color: #bdc3c7;
+        }
+
+        .close-btn {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0 5px;
+            visibility: hidden;
+        }
+
+        ul li:hover .close-btn {
+            visibility: visible;
+        }
+    </style>
+
+    <script src="~/Scripts/BaiTap/Bai04.js"></script>
+</head>
+<body>
+
+    <div class="todo-container">
+        <div class="header-box">
+            <input type="text" id="taskInput" placeholder="Enter a task">
+            <button onclick="addTask()">+</button>
+        </div>
+
+        <ul id="taskList">
+            <li>
+                <label>
+                    <input type="checkbox" checked onclick="toggleTask(this)">
+                    <span class="completed"> Việc 1</span>
+                </label>
+                <span class="close-btn" onclick="this.parentElement.remove()">&times;</span>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" onclick="toggleTask(this)">
+                    <span> Việc 2</span>
+                </label>
+                <span class="close-btn" onclick="this.parentElement.remove()">&times;</span>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" onclick="toggleTask(this)">
+                    <span> Việc 3</span>
+                </label>
+                <span class="close-btn" onclick="this.parentElement.remove()">&times;</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5 - Thanh tiến trình Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 20px;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            border-radius: 20px;
+            text-align: right;
+            padding-right: 15px;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: width 0.1s ease;
+        }
+
+        .purple {
+            background-color: #6a097d;
+        }
+
+        .teal {
+            background-color: #005f56; 
+        }
+
+        .orange {
+            background-color: #eb681e; 
+        }
+
+        .btn-restart {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center;
+            font-size: 14px;
+        }
+
+            .btn-restart:hover {
+                background-color: #555;
+            }
+    </style>
+
+    <script src="bai5.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="progress-container">
+            <div id="progress1" class="progress-bar purple">0%</div>
+        </div>
+
+        <div class="progress-container">
+            <div id="progress2" class="progress-bar teal">0%</div>
+        </div>
+
+        <div class="progress-container">
+            <div id="progress3" class="progress-bar orange">0%</div>
+        </div>
+
+        <button class="btn-restart" onclick="window.onload()">Chạy lại tiến trình</button>
+    </div>
+
+</body>
+</html>

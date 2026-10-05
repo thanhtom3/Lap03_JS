@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VD4</title>
+    <script language="Javascript">
+        function Thanhtien() {
+            var sl = parseFloat(document.getElementById("sl").value);
+            var dg = parseFloat(document.getElementById("dg").value);
+            window.document.getElementById("tt").value = sl * dg;
+        }
+    </script>
+</head>
+<body>
+    NHAP SO LUONG VA DON GIA
+    <form name="forml" method="post">
+        Don gia: <input type="number" id="dg" name="dongia"/>
+        So luong: <input type="number" id="sl" name="soluong" onkeyup="Thanhtien();" onchange="Thanhtien()"/>
+        Thanh tien: <input type="text" id="tt" name="tien"/>
+    </form>
+</body>
+</html>
